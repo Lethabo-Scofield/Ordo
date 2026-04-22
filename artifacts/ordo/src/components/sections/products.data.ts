@@ -10,10 +10,6 @@ import {
   RefreshCcw,
   Gauge,
   BarChart3,
-  ScrollText,
-  History,
-  Lock,
-  FileCheck2,
   CalendarClock,
   ListChecks,
   SlidersHorizontal,
@@ -45,86 +41,64 @@ export const products: Product[] = [
   {
     id: "interpret",
     eyebrow: "Interpret",
-    heading: "Turn instructions into structured workflows",
+    heading: "Turn instructions into workflows",
     subheading:
-      "Ordo understands your business processes and translates plain-language intent into reliable execution plans.",
+      "Describe what you need in plain language. Ordo turns it into a structured, repeatable execution plan.",
     accent: "from-[#FFE4CC] via-[#FFD4B5] to-[#F8C19A]",
     image: "/images/product-interpret.png",
-    imageAlt:
-      "Ordo interpreting a business search into autofilled workflow steps",
+    imageAlt: "Ordo turning a request into structured workflow steps",
     features: [
       {
         icon: MessageSquareText,
         title: "Natural language input",
-        description:
-          "Describe a task or workflow in plain language. Ordo turns it into a structured, repeatable execution plan.",
+        description: "Describe a task in plain language. Ordo builds the plan.",
       },
       {
         icon: Sparkles,
-        title: "Process understanding",
-        description:
-          "Ordo learns your business context - tools, data, terminology, and policies - so it interprets intent correctly the first time.",
+        title: "Knows your business",
+        description: "Learns your tools, data, and policies to read intent correctly.",
       },
       {
         icon: CalendarClock,
-        title: "Trigger-based workflows",
-        description:
-          "Run workflows from prompts, schedules, webhooks, or events across the systems your team already uses.",
+        title: "Any trigger",
+        description: "Runs from prompts, schedules, webhooks, or events.",
       },
       {
         icon: Workflow,
         title: "Adaptive planning",
-        description:
-          "Plans adjust in real time based on incoming data, conditions, and intermediate outcomes - without breaking the flow.",
+        description: "Plans adjust in real time as new data and conditions come in.",
       },
     ],
   },
   {
     id: "decide",
     eyebrow: "Decide",
-    heading: "Save time with automated case management",
+    heading: "Automate the calls humans hate",
     subheading:
-      "Reduce cost by cutting out lengthy reviews, manual checks, and endless e-mail back-and-forth.",
+      "Cut out manual reviews, checks, and email back-and-forth. Ordo decides by your rules.",
     accent: "from-[#F5E6D3] via-[#EBD5BE] to-[#D9BE9E]",
     image: "/images/product-decide.png",
-    imageAlt:
-      "Stacked case review steps: Geographic activity, Source of funds, Ownership structure",
+    imageAlt: "Stacked case review steps with automated decisions",
     features: [
       {
         icon: ListChecks,
         title: "Standardised tasks",
-        description:
-          "Translate compliance policies into repeatable, structured tasks that run the same way every time.",
+        description: "Turn policies into repeatable steps that run the same way every time.",
       },
       {
         icon: SlidersHorizontal,
-        title: "Optimised for every case",
-        description:
-          "Automatically adapt workflows based on risk signals, customer type, and your compliance logic.",
+        title: "Adapts per case",
+        description: "Workflows shift based on risk, customer type, and your logic.",
       },
       {
         icon: ScanSearch,
-        title: "AI document analysis",
-        description:
-          "Leverage leading AI and KYC technologies to verify and extract documents.",
+        title: "Document analysis",
+        description: "AI extracts and verifies documents automatically.",
       },
       {
         icon: CheckCircle2,
         title: "Instant approvals",
-        description:
-          "Automatically approve cases that meet your pre-set compliance criteria.",
-      },
-      {
-        icon: Search,
-        title: "AML investigations",
-        description:
-          "Fully automate hits on PEP, sanctions and adverse media, with outsourced OSINT investigations.",
-      },
-      {
-        icon: MailX,
-        title: "No more tedious back-and-forth",
-        description:
-          "Centralise customer communication so every clarification, document, and decision lives in one place.",
+        description: "Auto-approve cases that meet your criteria. Escalate the rest.",
       },
     ],
   },
@@ -133,106 +107,62 @@ export const products: Product[] = [
     eyebrow: "Execute",
     heading: "Take action across your stack",
     subheading:
-      "Connect Ordo to your APIs, databases, and tools - and let it complete real work end-to-end.",
+      "Connect Ordo to your APIs, databases, and tools. It does the real work, end to end.",
     accent: "from-[#E8DCC8] via-[#DBC9AE] to-[#C9B591]",
     image: "/images/product-execute.png",
-    imageAlt:
-      "Diagram of Ordo's execution flow connecting your stack of SaaS apps, databases and APIs to actions across Salesforce, Slack, Google Sheets, Postgres, AWS, webhooks and any API",
+    imageAlt: "Ordo connecting to SaaS apps, databases, and APIs",
     features: [
       {
         icon: Plug,
         title: "Universal connectors",
-        description:
-          "Out-of-the-box integrations with the tools your team already uses - CRMs, databases, SaaS apps, and internal services.",
+        description: "Out-of-the-box integrations for CRMs, SaaS, and internal tools.",
       },
       {
         icon: Zap,
         title: "API-native",
-        description:
-          "Call any API or internal service. If it has an endpoint, Ordo can run it - securely and on demand.",
+        description: "If it has an endpoint, Ordo can call it. Securely, on demand.",
       },
       {
         icon: Database,
         title: "Database operations",
-        description:
-          "Read, write, and reconcile data across systems with structured, type-safe operations and predictable results.",
+        description: "Read, write, and reconcile data with type-safe results.",
       },
       {
         icon: UserCheck,
         title: "Human-in-the-loop",
-        description:
-          "Pause for approval, escalate edge cases, and keep humans in control where it matters most.",
+        description: "Pause for approval and escalate edge cases when it matters.",
       },
     ],
   },
   {
     id: "verify",
     eyebrow: "Verify",
-    heading: "Catch errors before they ship",
+    heading: "Catch errors. Keep the receipts.",
     subheading:
-      "A real-time quality gate. Ordo checks every output against your rules and source data - and only commits results that pass.",
+      "A real-time quality gate plus a full audit trail. Ordo checks every output, and logs every run for replay and compliance.",
     accent: "from-[#F4DDD0] via-[#ECC9B5] to-[#DFB39A]",
     image: "/images/product-verify.png",
-    imageAlt:
-      "Ordo settings being verified against required information with checkmarks",
+    imageAlt: "Ordo verifying outputs against rules with a full audit log",
     features: [
       {
         icon: ShieldCheck,
         title: "Output validation",
-        description:
-          "Check results against schemas, business rules, and source-of-truth data the moment they're produced - before anything is committed.",
+        description: "Check results against rules and source data before anything commits.",
       },
       {
         icon: RefreshCcw,
         title: "Self-correction",
-        description:
-          "When a check fails, Ordo retries, reroutes, or escalates automatically - without breaking the workflow or losing context.",
+        description: "Failed checks retry, reroute, or escalate without breaking the flow.",
       },
       {
         icon: Gauge,
         title: "Confidence scoring",
-        description:
-          "Every step ships with a confidence signal so teams know in the moment when to step in and when to let it run.",
+        description: "Every step ships a signal: when to step in, when to let it run.",
       },
       {
         icon: BarChart3,
-        title: "Quality benchmarks",
-        description:
-          "Tune accuracy thresholds per workflow so only outputs that meet your bar move forward.",
-      },
-    ],
-  },
-  {
-    id: "audit",
-    eyebrow: "Audit",
-    heading: "Every run, on the record",
-    subheading:
-      "After the fact: a complete event timeline your security, ops, and compliance teams can search, replay, and export.",
-    accent: "from-[#E5D8C5] via-[#D4C2A8] to-[#B8A285]",
-    features: [
-      {
-        icon: ScrollText,
-        title: "Searchable run history",
-        description:
-          "Every input, decision, tool call, and output is captured as a structured event you can filter, drill into, and share.",
-      },
-      {
-        icon: History,
-        title: "Replay any execution",
-        description:
-          "Re-run any past workflow from any point - with the original inputs and context - to debug, demo, or prove what happened.",
-      },
-      {
-        icon: Lock,
-        title: "Permissions & controls",
-        description:
-          "Govern what each agent can read, write, or execute - by tool, dataset, role, or environment.",
-      },
-      {
-        icon: FileCheck2,
-        title: "Compliance exports",
-        description:
-          "Tamper-evident audit trails, retention policies, and one-click exports designed for SOC 2, ISO, and regulatory reviews.",
+        title: "Audit-ready logs",
+        description: "Every input, decision, and output captured. Replayable and exportable.",
       },
     ],
   },
