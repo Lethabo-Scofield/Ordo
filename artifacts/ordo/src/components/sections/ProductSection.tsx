@@ -47,7 +47,7 @@ export function ProductSection() {
             Product
           </span>
           <h2 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05]">
-            Execute business processes,{" "}
+            From intent{" "}
             <span
               className="inline-block text-[#E76F2C] font-normal tracking-normal"
               style={{
@@ -55,7 +55,7 @@ export function ProductSection() {
                 transform: "rotate(-2deg)",
               }}
             >
-              end to end.
+              to outcome.
             </span>
           </h2>
         </div>
