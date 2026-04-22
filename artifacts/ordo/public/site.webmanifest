@@ -1,0 +1,22 @@
+{
+  "name": "Ordo - AI Execution System",
+  "short_name": "Ordo",
+  "description": "AI-powered execution system that interprets, executes, verifies and audits work across your stack.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCE8D5",
+  "theme_color": "#FCE8D5",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
