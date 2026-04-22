@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "cd ../.. && corepack enable && pnpm install --no-frozen-lockfile && pnpm --filter @workspace/duna-clone build",
+  "outputDirectory": "dist/public",
+  "installCommand": "echo 'install handled by buildCommand'",
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/schedule-demo.ts": {
+      "maxDuration": 10
+    }
+  }
+}

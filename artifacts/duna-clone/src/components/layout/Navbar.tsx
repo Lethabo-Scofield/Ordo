@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
-import { openDemoDialog } from "@/components/ScheduleDemoDialog";
+import { openDemoDialog } from "@/components/demo/ScheduleDemoDialog";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);

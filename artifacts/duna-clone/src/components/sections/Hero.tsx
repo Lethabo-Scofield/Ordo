@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { openDemoDialog } from "@/components/ScheduleDemoDialog";
+import { openDemoDialog } from "@/components/demo/ScheduleDemoDialog";
 
 export function Hero() {
   return (

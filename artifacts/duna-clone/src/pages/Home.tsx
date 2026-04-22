@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ScheduleDemoDialog } from "@/components/ScheduleDemoDialog";
+import { ScheduleDemoDialog } from "@/components/demo/ScheduleDemoDialog";
 import { Hero } from "@/components/sections/Hero";
 import { LogoStrip } from "@/components/sections/LogoStrip";
 import { Stats } from "@/components/sections/Stats";
