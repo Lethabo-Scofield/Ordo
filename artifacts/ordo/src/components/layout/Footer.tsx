@@ -25,7 +25,16 @@ export function Footer() {
               </div>
             </div>
             <div className="mt-12 md:mt-0 text-sm text-muted-foreground">
-              © 2026 Ordo
+              © 2026 Ordo. A product of{" "}
+              <a
+                href="https://olyxee.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-foreground/70 transition-colors underline-offset-4 hover:underline"
+              >
+                Olyxee (Pty) Ltd
+              </a>
+              .
             </div>
           </div>
           
@@ -53,9 +62,9 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-4">
               <h4 className="font-semibold text-sm">Legal</h4>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cookies</a>
+              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
+              <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
+              <Link href="/cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cookies</Link>
             </div>
           </div>
         </div>
