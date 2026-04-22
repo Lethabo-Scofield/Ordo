@@ -1,9 +1,33 @@
-import { useState } from "react";
+import { useState, type ComponentType } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import {
+  Briefcase,
+  Zap,
+  Info,
+  Globe,
+  Database,
+  Plug,
+  Workflow,
+  UserCheck,
+  ShieldCheck,
+  RefreshCcw,
+  Gauge,
+  BarChart3,
+  ScrollText,
+  History,
+  Lock,
+  FileCheck2,
+  MessageSquareText,
+  Sparkles,
+  CalendarClock,
+  Layers,
+  type LucideIcon,
+} from "lucide-react";
 
 interface Feature {
   title: string;
   description: string;
+  icon?: LucideIcon;
   image?: string;
   imageAlt?: string;
 }
@@ -16,6 +40,29 @@ interface ProductSectionProps {
   image?: string;
   imageAlt?: string;
 }
+
+export const featureIcons = {
+  Briefcase,
+  Zap,
+  Info,
+  Globe,
+  Database,
+  Plug,
+  Workflow,
+  UserCheck,
+  ShieldCheck,
+  RefreshCcw,
+  Gauge,
+  BarChart3,
+  ScrollText,
+  History,
+  Lock,
+  FileCheck2,
+  MessageSquareText,
+  Sparkles,
+  CalendarClock,
+  Layers,
+} satisfies Record<string, ComponentType>;
 
 export function ProductSection({
   eyebrow,
@@ -34,7 +81,7 @@ export function ProductSection({
     <section className="px-6">
       <div className="max-w-[1280px] mx-auto">
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,13 +89,15 @@ export function ProductSection({
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <div className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-6">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-foreground/[0.06] text-xs font-medium text-foreground/80 mb-6">
               {eyebrow}
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] mb-6">
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-[-0.02em] leading-[1.1] mb-5">
               {heading}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">{subheading}</p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {subheading}
+            </p>
           </motion.div>
 
           <motion.a
@@ -57,7 +106,7 @@ export function ProductSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-border/50 hover:bg-foreground/5 transition-colors text-sm font-medium shadow-sm shrink-0"
+            className="self-start inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-border/60 hover:bg-foreground/[0.03] transition-colors text-sm font-medium shrink-0"
           >
             <span>Explore</span>
             <span className="text-muted-foreground">›</span>
@@ -65,7 +114,7 @@ export function ProductSection({
         </div>
 
         {/* Visual + accordion */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Image panel */}
           <div className="order-2 lg:order-1">
             <AnimatePresence mode="wait">
@@ -75,7 +124,7 @@ export function ProductSection({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full aspect-square rounded-[28px] overflow-hidden border border-border/40 bg-[#EFEDE6] flex items-center justify-center"
+                className="w-full aspect-square rounded-[28px] overflow-hidden bg-[#EFEDE6] flex items-center justify-center"
               >
                 {displayImage ? (
                   <div
@@ -86,7 +135,7 @@ export function ProductSection({
                   />
                 ) : (
                   <div className="text-center px-8">
-                    <div className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-3">
+                    <div className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">
                       {eyebrow}
                     </div>
                     <div className="text-2xl font-semibold text-foreground/70">
@@ -99,30 +148,34 @@ export function ProductSection({
           </div>
 
           {/* Feature accordion */}
-          <ul className="order-1 lg:order-2 flex flex-col gap-2">
+          <ul className="order-1 lg:order-2 flex flex-col gap-1 self-center">
             {features.map((feature, index) => {
               const isActive = index === activeIndex;
+              const Icon = feature.icon ?? Sparkles;
               return (
                 <li key={feature.title}>
                   <button
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`w-full text-left rounded-[20px] border transition-colors px-6 py-5 ${
+                    className={`w-full text-left rounded-2xl transition-colors px-5 py-4 ${
                       isActive
-                        ? "bg-white border-border/60 shadow-sm"
-                        : "bg-transparent border-transparent hover:bg-foreground/[0.03]"
+                        ? "bg-foreground/[0.04]"
+                        : "bg-transparent hover:bg-foreground/[0.025]"
                     }`}
                     aria-expanded={isActive}
                   >
                     <div className="flex items-center gap-3">
+                      <Icon
+                        className={`w-[18px] h-[18px] shrink-0 ${
+                          isActive ? "text-foreground" : "text-foreground/60"
+                        }`}
+                        strokeWidth={1.75}
+                      />
                       <span
-                        className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${
-                          isActive ? "bg-foreground/10" : "bg-foreground/5"
+                        className={`text-base md:text-[17px] font-medium ${
+                          isActive ? "text-foreground" : "text-foreground/80"
                         }`}
                       >
-                        <span className="w-2.5 h-2.5 rounded-sm bg-foreground/40" />
-                      </span>
-                      <span className="text-base md:text-lg font-semibold text-foreground">
                         {feature.title}
                       </span>
                     </div>
@@ -136,7 +189,7 @@ export function ProductSection({
                           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                           className="overflow-hidden"
                         >
-                          <p className="text-muted-foreground leading-relaxed pt-3 pl-9 pr-2">
+                          <p className="text-muted-foreground leading-relaxed text-[15px] pt-2 pl-[30px] pr-2">
                             {feature.description}
                           </p>
                         </motion.div>
