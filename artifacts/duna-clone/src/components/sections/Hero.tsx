@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { openDemoDialog } from "@/components/ScheduleDemoDialog";
 
 export function Hero() {
   return (
@@ -51,7 +52,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <button className="bg-foreground text-background px-7 py-3.5 rounded-full text-base font-medium hover:bg-foreground/90 transition-colors shadow-lg">
+            <button
+              onClick={openDemoDialog}
+              className="bg-foreground text-background px-7 py-3.5 rounded-full text-base font-medium hover:bg-foreground/90 transition-colors shadow-lg"
+            >
               Get started
             </button>
           </motion.div>
@@ -108,7 +112,10 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <button className="bg-foreground text-background px-8 py-4 rounded-full text-base font-medium hover:bg-foreground/90 transition-colors shadow-lg">
+              <button
+                onClick={openDemoDialog}
+                className="bg-foreground text-background px-8 py-4 rounded-full text-base font-medium hover:bg-foreground/90 transition-colors shadow-lg"
+              >
                 Get started
               </button>
             </motion.div>

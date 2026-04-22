@@ -1,14 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
-
-const MAILTO =
-  "mailto:scofield@olyxee.com?subject=Schedule%20a%20demo%20with%20Ordo&body=Hi%20Ordo%20team%2C%0A%0AI%27d%20like%20to%20schedule%20a%20demo.%0A%0AName%3A%0ACompany%3A%0APreferred%20time%3A%0A%0AThanks!";
+import { openDemoDialog } from "@/components/ScheduleDemoDialog";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -16,15 +12,6 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const handleSchedule = () => {
-    if (loading) return;
-    setLoading(true);
-    setTimeout(() => {
-      window.location.href = MAILTO;
-      setTimeout(() => setLoading(false), 800);
-    }, 900);
-  };
 
   return (
     <>
@@ -50,54 +37,16 @@ export function Navbar() {
 
           <div className="flex items-center">
             <button
-              onClick={handleSchedule}
-              disabled={loading}
+              onClick={openDemoDialog}
               aria-label="Schedule a demo"
-              className="bg-foreground text-background px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[13px] sm:text-sm font-medium hover:bg-foreground/90 transition-colors disabled:opacity-90 inline-flex items-center gap-2 sm:min-w-[160px] justify-center whitespace-nowrap"
+              className="bg-foreground text-background px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[13px] sm:text-sm font-medium hover:bg-foreground/90 transition-colors inline-flex items-center gap-2 justify-center whitespace-nowrap"
             >
-              {loading ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  <span className="hidden sm:inline">Opening</span>
-                </>
-              ) : (
-                <>
-                  <span className="sm:hidden">Book demo</span>
-                  <span className="hidden sm:inline">Schedule a demo</span>
-                </>
-              )}
+              <span className="sm:hidden">Book demo</span>
+              <span className="hidden sm:inline">Schedule a demo</span>
             </button>
           </div>
         </div>
       </motion.header>
-
-      {/* Full-screen overlay loader */}
-      <AnimatePresence>
-        {loading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-sm flex items-center justify-center"
-          >
-            <div className="flex flex-col items-center gap-5">
-              <motion.img
-                src="/favicon.png"
-                alt="Ordo"
-                className="w-16 h-16 select-none"
-                animate={{ scale: [1, 1.08, 1] }}
-                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                draggable={false}
-              />
-              <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
-                <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Opening your email…</span>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
