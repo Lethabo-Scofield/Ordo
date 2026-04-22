@@ -86,6 +86,8 @@ const products: Product[] = [
     heading: "Take action across your stack",
     subheading: "Connect Ordo to your APIs, databases, and tools - and let it complete real work end-to-end.",
     accent: "from-[#E8DCC8] via-[#DBC9AE] to-[#C9B591]",
+    image: "/images/product-execute.png",
+    imageAlt: "Diagram of Ordo's execution flow connecting your stack of SaaS apps, databases and APIs to actions across Salesforce, Slack, Google Sheets, Postgres, AWS, webhooks and any API",
     features: [
       { icon: Plug, title: "Universal connectors", description: "Out-of-the-box integrations with the tools your team already uses - CRMs, databases, SaaS apps, and internal services." },
       { icon: Zap, title: "API-native", description: "Call any API or internal service. If it has an endpoint, Ordo can run it - securely and on demand." },
