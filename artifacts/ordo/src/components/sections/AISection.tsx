@@ -19,7 +19,24 @@ export function AISection() {
               AI built to do the work.
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 md:mb-10">
-              Ordo's agents go beyond reasoning. They take instructions, execute across your tools, verify the output, and keep a full audit trail of everything they touch.
+              <span className="relative inline-block">
+                <span className="relative z-10">Ordo's agents</span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 220 14"
+                  preserveAspectRatio="none"
+                  className="absolute left-0 right-0 -bottom-2 w-full h-[10px] sm:h-[12px] pointer-events-none text-[#E76F2C]"
+                >
+                  <path
+                    d="M3 8 C 40 2, 90 12, 130 6 S 200 4, 217 9"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>{" "}
+              go beyond reasoning. They take instructions, execute across your tools, verify the output, and keep a full audit trail of everything they touch.
             </p>
             <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors text-sm font-medium">
               <span>Discover Ordo AI</span>
