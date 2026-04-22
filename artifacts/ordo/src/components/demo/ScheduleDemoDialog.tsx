@@ -133,7 +133,7 @@ export function ScheduleDemoDialog() {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-6"
+          className="fixed inset-0 z-[120] overflow-y-auto overscroll-contain flex items-start sm:items-center justify-center p-3 sm:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -141,7 +141,7 @@ export function ScheduleDemoDialog() {
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-foreground/40 backdrop-blur-sm"
+            className="fixed inset-0 bg-foreground/40 backdrop-blur-sm"
             onClick={() => !submitting && setOpen(false)}
             aria-hidden
           />
@@ -155,7 +155,7 @@ export function ScheduleDemoDialog() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-lg bg-white rounded-[24px] shadow-2xl overflow-hidden border border-border/50"
+            className="relative my-auto w-full max-w-lg bg-white rounded-[24px] shadow-2xl overflow-hidden border border-border/50"
           >
             {/* Painterly accent header */}
             <div
