@@ -17,6 +17,7 @@ import {
   Lock,
   FileCheck2,
   CalendarClock,
+  ArrowUpRight,
   type LucideIcon,
 } from "lucide-react";
 
@@ -31,6 +32,7 @@ interface Product {
   eyebrow: string;
   heading: string;
   subheading: string;
+  accent: string;
   image?: string;
   imageAlt?: string;
   features: Feature[];
@@ -42,6 +44,7 @@ const products: Product[] = [
     eyebrow: "Interpret",
     heading: "Turn instructions into structured workflows",
     subheading: "Ordo understands your business processes and translates plain-language intent into reliable execution plans.",
+    accent: "from-[#FFE4CC] via-[#FFD4B5] to-[#F8C19A]",
     image: "/images/product-interpret.png",
     imageAlt: "Ordo interpreting a business search into autofilled workflow steps",
     features: [
@@ -56,6 +59,7 @@ const products: Product[] = [
     eyebrow: "Execute",
     heading: "Take action across your stack",
     subheading: "Connect Ordo to your APIs, databases, and tools — and let it complete real work end-to-end.",
+    accent: "from-[#E8DCC8] via-[#DBC9AE] to-[#C9B591]",
     features: [
       { icon: Plug, title: "Universal connectors", description: "Out-of-the-box integrations with the tools your team already uses — CRMs, databases, SaaS apps, and internal services." },
       { icon: Zap, title: "API-native", description: "Call any API or internal service. If it has an endpoint, Ordo can run it — securely and on demand." },
@@ -68,6 +72,7 @@ const products: Product[] = [
     eyebrow: "Verify",
     heading: "Outputs you can actually trust",
     subheading: "Every action Ordo takes is checked against expected outcomes — not just generated and shipped.",
+    accent: "from-[#F4DDD0] via-[#ECC9B5] to-[#DFB39A]",
     image: "/images/product-verify.png",
     imageAlt: "Ordo settings being verified against required information with checkmarks",
     features: [
@@ -82,6 +87,7 @@ const products: Product[] = [
     eyebrow: "Audit",
     heading: "Full traceability for every run",
     subheading: "Logs, lineage, and accountability for every action Ordo takes — built for regulated environments.",
+    accent: "from-[#E5D8C5] via-[#D4C2A8] to-[#B8A285]",
     features: [
       { icon: ScrollText, title: "Detailed run logs", description: "Capture inputs, decisions, tool calls, and outputs as a structured event timeline you can search and replay." },
       { icon: History, title: "Replayable workflows", description: "Re-run any execution from any point — with the same inputs, conditions, and surrounding context." },
@@ -91,7 +97,7 @@ const products: Product[] = [
   },
 ];
 
-const ROTATE_MS = 6000;
+const ROTATE_MS = 7000;
 
 export function ProductSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -103,160 +109,206 @@ export function ProductSection() {
       setActiveIndex((i) => (i + 1) % products.length);
     }, ROTATE_MS);
     return () => clearInterval(id);
-  }, [isPaused]);
+  }, [isPaused, activeIndex]);
 
   const product = products[activeIndex];
 
   return (
-    <section
-      className="px-6"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="max-w-[1280px] mx-auto">
-        {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-14 min-h-[180px]">
-          <div className="max-w-2xl">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`header-${product.id}`}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-foreground/[0.06] text-xs font-medium text-foreground/80 mb-6">
-                  {product.eyebrow}
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-[-0.02em] leading-[1.1] mb-5">
-                  {product.heading}
-                </h2>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  {product.subheading}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+    <section className="relative px-6">
+      {/* Decorative background blobs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-radial from-[#FCE8D5]/40 via-transparent to-transparent blur-3xl" />
+      </div>
 
-          <a
-            href="#"
-            className="self-start inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-border/60 hover:bg-foreground/[0.03] transition-colors text-sm font-medium shrink-0"
+      <div className="relative max-w-[1280px] mx-auto">
+        {/* Section header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/[0.05] border border-border/40 text-xs font-medium text-foreground/70 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-foreground/60" />
+            Product
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05] mb-5">
+            One platform.
+            <br />
+            <span className="text-foreground/50">End-to-end execution.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            From the moment intent enters Ordo to the audit log it leaves behind — every step is designed to make AI dependable at work.
+          </p>
+        </div>
+
+        {/* Tab bar */}
+        <div className="flex justify-center mb-12">
+          <div
+            className="inline-flex flex-wrap items-center gap-1 p-1.5 rounded-full bg-white/70 backdrop-blur border border-border/50 shadow-sm"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            <span>Explore</span>
-            <span className="text-muted-foreground">›</span>
-          </a>
+            {products.map((p, idx) => {
+              const isActive = idx === activeIndex;
+              return (
+                <button
+                  key={p.id}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`relative px-5 md:px-6 py-2.5 text-sm font-medium rounded-full transition-colors ${
+                    isActive ? "text-background" : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="product-active-pill"
+                      className="absolute inset-0 bg-foreground rounded-full"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    />
+                  )}
+                  {isActive && !isPaused && (
+                    <motion.span
+                      key={`prog-${activeIndex}`}
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: ROTATE_MS / 1000, ease: "linear" }}
+                      className="absolute bottom-0 left-0 h-[2px] bg-white/40 rounded-full"
+                    />
+                  )}
+                  <span className="relative z-10">{p.eyebrow}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Visual + feature list */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          {/* Image panel */}
-          <div className="order-2 lg:order-1">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`img-${product.id}`}
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full aspect-square rounded-[28px] overflow-hidden bg-[#EFEDE6] flex items-center justify-center"
-              >
-                {product.image ? (
-                  <div
-                    className="w-full h-full bg-no-repeat bg-center bg-contain"
-                    style={{ backgroundImage: `url('${product.image}')` }}
-                    role="img"
-                    aria-label={product.imageAlt ?? product.heading}
-                  />
-                ) : (
-                  <div className="text-center px-8">
-                    <div className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">
+        {/* Card */}
+        <div
+          className="relative rounded-[36px] border border-border/40 bg-white/60 backdrop-blur-sm shadow-[0_30px_80px_-30px_rgba(0,0,0,0.15)] overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Card accent gradient */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`accent-${product.id}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className={`pointer-events-none absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-gradient-to-br ${product.accent} blur-3xl`}
+            />
+          </AnimatePresence>
+
+          <div className="relative p-8 md:p-12 lg:p-16">
+            {/* Header row inside card */}
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12 min-h-[160px]">
+              <div className="flex-1 max-w-2xl">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`header-${product.id}`}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-foreground/[0.06] text-xs font-medium text-foreground/80 mb-5">
                       {product.eyebrow}
-                    </div>
-                    <div className="text-2xl font-semibold text-foreground/70">
+                    </span>
+                    <h3 className="text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-[-0.02em] leading-[1.1] mb-4">
                       {product.heading}
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                    </h3>
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                      {product.subheading}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
 
-          {/* Feature list */}
-          <div className="order-1 lg:order-2 self-center">
-            <AnimatePresence mode="wait">
-              <motion.ul
-                key={`features-${product.id}`}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col gap-1"
+              <a
+                href="#"
+                className="group self-start inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-colors text-sm font-medium shrink-0"
               >
-                {product.features.map((feature, idx) => {
-                  const Icon = feature.icon;
-                  const isActive = idx === 0;
-                  return (
-                    <li
-                      key={feature.title}
-                      className={`rounded-2xl px-5 py-4 ${
-                        isActive ? "bg-foreground/[0.04]" : ""
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <Icon
-                          className={`w-[18px] h-[18px] shrink-0 ${
-                            isActive ? "text-foreground" : "text-foreground/60"
-                          }`}
-                          strokeWidth={1.75}
-                        />
-                        <span
-                          className={`text-base md:text-[17px] font-medium ${
-                            isActive ? "text-foreground" : "text-foreground/80"
-                          }`}
-                        >
-                          {feature.title}
-                        </span>
+                <span>Explore</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
+
+            {/* Visual + features */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-start">
+              {/* Image panel */}
+              <div className="order-2 lg:order-1">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`img-${product.id}`}
+                    initial={{ opacity: 0, scale: 0.96, y: 12 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.98, y: -8 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="relative w-full aspect-square rounded-[24px] overflow-hidden bg-[#EFEDE6] flex items-center justify-center shadow-inner"
+                  >
+                    {product.image ? (
+                      <div
+                        className="w-full h-full bg-no-repeat bg-center bg-contain"
+                        style={{ backgroundImage: `url('${product.image}')` }}
+                        role="img"
+                        aria-label={product.imageAlt ?? product.heading}
+                      />
+                    ) : (
+                      <div
+                        className={`w-full h-full bg-gradient-to-br ${product.accent} flex items-center justify-center`}
+                      >
+                        <div className="text-center px-8">
+                          <div className="text-xs font-medium tracking-widest uppercase text-foreground/50 mb-3">
+                            {product.eyebrow}
+                          </div>
+                          <div className="text-3xl font-semibold text-foreground/80 max-w-[280px]">
+                            {product.heading}
+                          </div>
+                        </div>
                       </div>
-                      {isActive && (
-                        <p className="text-muted-foreground leading-relaxed text-[15px] pt-2 pl-[30px] pr-2">
-                          {feature.description}
-                        </p>
-                      )}
-                    </li>
-                  );
-                })}
-              </motion.ul>
-            </AnimatePresence>
-          </div>
-        </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
 
-        {/* Progress dots */}
-        <div className="flex items-center justify-center gap-2 mt-14">
-          {products.map((p, idx) => {
-            const isActive = idx === activeIndex;
-            return (
-              <button
-                key={p.id}
-                onClick={() => setActiveIndex(idx)}
-                aria-label={`Show ${p.eyebrow}`}
-                className="group relative h-1.5 rounded-full overflow-hidden bg-foreground/10 transition-all"
-                style={{ width: isActive ? 48 : 24 }}
-              >
-                {isActive && !isPaused && (
-                  <motion.span
-                    key={`bar-${activeIndex}`}
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: ROTATE_MS / 1000, ease: "linear" }}
-                    className="absolute inset-y-0 left-0 bg-foreground/70"
-                  />
-                )}
-                {isActive && isPaused && (
-                  <span className="absolute inset-0 bg-foreground/70" />
-                )}
-              </button>
-            );
-          })}
+              {/* Feature list */}
+              <div className="order-1 lg:order-2 self-center">
+                <AnimatePresence mode="wait">
+                  <motion.ul
+                    key={`features-${product.id}`}
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -8 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col gap-2"
+                  >
+                    {product.features.map((feature, idx) => {
+                      const Icon = feature.icon;
+                      return (
+                        <motion.li
+                          key={feature.title}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.35, delay: idx * 0.06 }}
+                          className="group rounded-2xl px-5 py-4 hover:bg-foreground/[0.03] transition-colors"
+                        >
+                          <div className="flex items-start gap-4">
+                            <span className="mt-0.5 w-9 h-9 rounded-xl bg-foreground/[0.06] flex items-center justify-center shrink-0 group-hover:bg-foreground/10 transition-colors">
+                              <Icon className="w-[18px] h-[18px] text-foreground/80" strokeWidth={1.75} />
+                            </span>
+                            <div className="flex-1 pt-1">
+                              <div className="text-base md:text-[17px] font-medium text-foreground mb-1.5">
+                                {feature.title}
+                              </div>
+                              <p className="text-muted-foreground leading-relaxed text-[14.5px]">
+                                {feature.description}
+                              </p>
+                            </div>
+                          </div>
+                        </motion.li>
+                      );
+                    })}
+                  </motion.ul>
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
