@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export function Hero() {
   return (
     <section className="relative w-full bg-background overflow-hidden">
-      {/* Background image — kept at its natural aspect so the
+      {/* Background image - kept at its natural aspect so the
           painted white at the bottom blends seamlessly with the
           white section that follows. */}
       <img
@@ -26,7 +26,7 @@ export function Hero() {
               href="#"
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-foreground/10 hover:bg-foreground/15 backdrop-blur-sm transition-colors border border-foreground/5 text-sm font-medium"
             >
-              <span>Introducing Ordo — AI execution for business</span>
+              <span>Introducing Ordo - AI execution for business</span>
               <span className="text-muted-foreground ml-1">›</span>
             </a>
           </motion.div>
@@ -46,7 +46,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-base md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
           >
-            Meet Ordo — the AI-powered execution system that interprets instructions, runs workflows across your tools, and verifies the results.
+            Meet Ordo - the AI-powered execution system that interprets instructions, runs workflows across your tools, and verifies the results.
           </motion.p>
 
           <motion.div

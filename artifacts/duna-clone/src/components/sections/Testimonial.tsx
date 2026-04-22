@@ -15,7 +15,7 @@ export function Testimonial() {
             Trusted by operators
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Run your business operations like the world's best teams — without scaling headcount linearly with the work.
+            Run your business operations like the world's best teams - without scaling headcount linearly with the work.
           </p>
         </motion.div>
 
@@ -28,7 +28,7 @@ export function Testimonial() {
         >
           <div className="flex-1">
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] tracking-tight mb-12 text-foreground/90">
-              "Ordo turned our backlog of manual operations into a system that runs itself. It's the first AI tool we've actually trusted to do the work — not just describe it."
+              "Ordo turned our backlog of manual operations into a system that runs itself. It's the first AI tool we've actually trusted to do the work - not just describe it."
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/50 shadow-sm">

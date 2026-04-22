@@ -34,9 +34,12 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center">
-          <button className="bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors">
+          <a
+            href="mailto:scofield@olyxee.com?subject=Schedule%20a%20demo%20with%20Ordo&body=Hi%20Ordo%20team%2C%0A%0AI%27d%20like%20to%20schedule%20a%20demo.%0A%0AName%3A%0ACompany%3A%0APreferred%20time%3A%0A%0AThanks!"
+            className="bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors"
+          >
             Schedule a demo
-          </button>
+          </a>
         </div>
       </div>
     </motion.header>

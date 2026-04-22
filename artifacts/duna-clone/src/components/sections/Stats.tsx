@@ -58,7 +58,7 @@ export function Stats() {
           >
             <h3 className="text-xl font-semibold mb-4">Run real work</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Ordo doesn't just suggest — it executes. Connect your tools and let AI complete tasks across your stack, end-to-end.
+              Ordo doesn't just suggest - it executes. Connect your tools and let AI complete tasks across your stack, end-to-end.
             </p>
           </motion.div>
 
@@ -70,7 +70,7 @@ export function Stats() {
           >
             <h3 className="text-xl font-semibold mb-4">Reliable by design</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Every workflow is verified, logged, and auditable — built for environments where consistency and control matter.
+              Every workflow is verified, logged, and auditable - built for environments where consistency and control matter.
             </p>
           </motion.div>
 
