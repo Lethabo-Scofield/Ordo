@@ -19,12 +19,17 @@ export function ProductSection() {
     return () => clearInterval(id);
   }, [isPaused, activeIndex]);
 
-  // Keep active tab in view on mobile (horizontal scroll)
+  // Keep active tab in view on mobile by scrolling only the tab bar horizontally.
+  // Using scrollIntoView would also scroll the page vertically on mobile, which
+  // disrupts the user as the tabs auto-rotate.
   useEffect(() => {
     const el = tabRefs.current[activeIndex];
-    if (el && typeof el.scrollIntoView === "function") {
-      el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-    }
+    if (!el) return;
+    const scroller = el.closest<HTMLElement>("[data-tab-scroller]");
+    if (!scroller) return;
+    const target =
+      el.offsetLeft - scroller.clientWidth / 2 + el.clientWidth / 2;
+    scroller.scrollTo({ left: target, behavior: "smooth" });
   }, [activeIndex]);
 
   const product = products[activeIndex];
@@ -53,7 +58,7 @@ export function ProductSection() {
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={() => setIsPaused(true)}
         >
-          <div className="overflow-x-auto scrollbar-none sm:overflow-visible">
+          <div data-tab-scroller className="overflow-x-auto scrollbar-none sm:overflow-visible">
             <div className="inline-flex items-center gap-1 p-1 sm:p-1.5 mx-4 sm:mx-0 rounded-full bg-white/70 backdrop-blur border border-border/50 shadow-sm whitespace-nowrap">
               {products.map((p, idx) => {
                 const isActive = idx === activeIndex;
