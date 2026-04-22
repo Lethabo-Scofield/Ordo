@@ -79,10 +79,17 @@ export function ScheduleDemoDialog() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const data = (await res.json().catch(() => ({}))) as {
-        ok?: boolean;
-        error?: string;
-      };
+      const ct = res.headers.get("content-type") || "";
+      const data = ct.includes("application/json")
+        ? ((await res.json().catch(() => ({}))) as { ok?: boolean; error?: string })
+        : {};
+      if (res.status === 404) {
+        setError(
+          "The demo form isn't connected in this preview yet. Please reach out via email and we'll get back to you.",
+        );
+        setSubmitting(false);
+        return;
+      }
       if (!res.ok || !data.ok) {
         setError(data.error || "Something went wrong. Please try again.");
         setSubmitting(false);

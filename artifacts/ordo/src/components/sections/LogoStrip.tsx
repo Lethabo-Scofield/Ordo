@@ -8,7 +8,7 @@ interface Logo {
 const logos: Logo[] = [
   { name: "Linear", slug: "linear" },
   { name: "Notion", slug: "notion" },
-  { name: "Slack", slug: "slack" },
+  { name: "Discord", slug: "discord" },
   { name: "Stripe", slug: "stripe" },
   { name: "HubSpot", slug: "hubspot" },
   { name: "Airtable", slug: "airtable" },

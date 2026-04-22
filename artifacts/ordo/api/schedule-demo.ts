@@ -38,9 +38,10 @@ export default async function handler(req: any, res: any) {
   const to = process.env.CAREERS_TO_EMAIL;
 
   if (!apiKey || !to) {
-    res.status(500).json({
+    res.status(503).json({
       ok: false,
-      error: "Email service is not configured. Please try again later.",
+      error:
+        "Demo requests aren't wired up yet. Please email us directly while we get this hooked up.",
     });
     return;
   }
