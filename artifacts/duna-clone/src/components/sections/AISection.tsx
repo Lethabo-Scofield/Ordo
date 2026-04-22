@@ -34,13 +34,12 @@ export function AISection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex-1 w-full flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[400px] aspect-[9/16] rounded-[32px] overflow-hidden shadow-2xl border border-border/50">
-              <img 
-                src="/images/ai-mockup.png" 
-                alt="Ordo AI Interface" 
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
+            <div
+              className="relative w-full max-w-[480px] aspect-square rounded-[32px] overflow-hidden shadow-2xl border border-border/50 bg-[#EFEDE6] bg-no-repeat bg-center bg-contain"
+              style={{ backgroundImage: "url('/images/ai-mockup.png')" }}
+              role="img"
+              aria-label="Ordo AI workflow interface"
+            />
           </motion.div>
         </div>
       </div>
