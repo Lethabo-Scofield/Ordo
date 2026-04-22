@@ -2,8 +2,16 @@ import { Link } from "wouter";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-transparent to-[#FCE8D5]/30 pt-32 pb-12 px-6">
-      <div className="max-w-[1280px] mx-auto">
+    <footer className="relative pt-32 pb-12 px-6 overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/footer-bg.png')" }}
+        aria-hidden="true"
+      />
+      {/* Soft overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/40 to-background/10" aria-hidden="true" />
+      <div className="relative max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-24">
           <div className="md:col-span-4 lg:col-span-5 flex flex-col justify-between">
             <div>
