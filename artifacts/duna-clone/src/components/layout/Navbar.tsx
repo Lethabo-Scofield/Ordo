@@ -1,10 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-white/80 backdrop-blur-md border-b border-transparent hover:border-border/50"
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-md border-b border-border/50"
+          : "bg-transparent border-b border-transparent"
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -18,13 +32,6 @@ export function Navbar() {
             draggable={false}
           />
         </Link>
-
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">Product</a>
-          <a href="#" className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">Customers</a>
-          <a href="#" className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">Company</a>
-          <a href="#" className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">Resources</a>
-        </nav>
 
         <div className="flex items-center">
           <button className="bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors">
