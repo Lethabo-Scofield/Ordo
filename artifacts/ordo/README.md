@@ -9,7 +9,7 @@ Built with **React + Vite + Tailwind CSS**, deployed on **Vercel**.
 ## Project structure
 
 ```
-artifacts/duna-clone/
+artifacts/ordo/
 ├── api/
 │   └── schedule-demo.ts          Vercel serverless function (Resend email)
 ├── public/
@@ -62,7 +62,7 @@ artifacts/duna-clone/
 
 ```bash
 pnpm install                                 # from monorepo root
-pnpm --filter @workspace/duna-clone dev      # http://localhost:5173
+pnpm --filter @workspace/ordo dev      # http://localhost:5173
 ```
 
 Set `BASE_PATH` (defaults to `/`) and `PORT` (defaults to `5173`) only if you need to override.
@@ -84,11 +84,11 @@ In local dev (Vite only), the `/api` endpoint isn't served - the form will show 
 
 Two supported setups:
 
-### 1. Vercel project root = `artifacts/duna-clone` (recommended)
+### 1. Vercel project root = `artifacts/ordo` (recommended)
 
 Already configured via `vercel.json`:
 
-- `buildCommand` traverses to the monorepo root, installs all workspaces, then runs `pnpm --filter @workspace/duna-clone build`.
+- `buildCommand` traverses to the monorepo root, installs all workspaces, then runs `pnpm --filter @workspace/ordo build`.
 - `outputDirectory` is `dist/public` (Vite output).
 - SPA rewrites send everything except `/api/*` to `index.html` so client-side routing (wouter) works.
 - Long-cache headers are set for `/assets/*` and `/images/*`.
@@ -100,10 +100,10 @@ In Vercel project settings, set the env vars `RESEND_API_KEY` and `CAREERS_TO_EM
 Override the build command in Vercel UI:
 
 ```
-pnpm install --no-frozen-lockfile && pnpm --filter @workspace/duna-clone build
+pnpm install --no-frozen-lockfile && pnpm --filter @workspace/ordo build
 ```
 
-Set output directory to `artifacts/duna-clone/dist/public`.
+Set output directory to `artifacts/ordo/dist/public`.
 
 ---
 

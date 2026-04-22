@@ -1,0 +1,12 @@
+node_modules
+**/node_modules
+**/dist
+**/.replit-artifact
+**/.turbo
+**/.next
+**/.cache
+*.log
+
+# Other artifacts that should not be deployed by Vercel
+artifacts/api-server
+artifacts/mockup-sandbox

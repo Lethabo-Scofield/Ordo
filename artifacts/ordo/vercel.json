@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "cd ../.. && corepack enable && pnpm install --no-frozen-lockfile && pnpm --filter @workspace/duna-clone build",
+  "buildCommand": "cd ../.. && corepack enable && pnpm install --no-frozen-lockfile && pnpm --filter @workspace/ordo build",
   "outputDirectory": "dist/public",
   "installCommand": "echo 'install handled by buildCommand'",
   "rewrites": [

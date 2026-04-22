@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "Duna"
+title = "Ordo"
 version = "1.0.0"
 id = "artifacts/duna-clone"
 router = "path"
@@ -15,11 +15,11 @@ paths = [ "/" ]
 localPort = 23696
 
 [services.development]
-run = "pnpm --filter @workspace/duna-clone run dev"
+run = "pnpm --filter @workspace/ordo run dev"
 
 [services.production]
-build = [ "pnpm", "--filter", "@workspace/duna-clone", "run", "build" ]
-publicDir = "artifacts/duna-clone/dist/public"
+build = [ "pnpm", "--filter", "@workspace/ordo", "run", "build" ]
+publicDir = "artifacts/ordo/dist/public"
 serve = "static"
 
 [[services.production.rewrites]]
