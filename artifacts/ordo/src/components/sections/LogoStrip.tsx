@@ -11,13 +11,15 @@ const logos: Logo[] = [
   { name: "Slack", slug: "slack" },
   { name: "Stripe", slug: "stripe" },
   { name: "HubSpot", slug: "hubspot" },
-  { name: "Salesforce", slug: "salesforce" },
+  { name: "Airtable", slug: "airtable" },
+  { name: "Jira", slug: "jira" },
   { name: "Zendesk", slug: "zendesk" },
   { name: "Asana", slug: "asana" },
   { name: "Figma", slug: "figma" },
   { name: "GitHub", slug: "github" },
   { name: "Intercom", slug: "intercom" },
   { name: "Zapier", slug: "zapier" },
+  { name: "Mailchimp", slug: "mailchimp" },
 ];
 
 export function LogoStrip() {
@@ -45,15 +47,18 @@ export function LogoStrip() {
             {repeated.map((logo, i) => (
               <div
                 key={`${logo.slug}-${i}`}
-                className="flex items-center gap-2 sm:gap-3 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="flex items-center gap-2 sm:gap-3 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300"
                 title={logo.name}
               >
                 <img
-                  src={`https://cdn.simpleicons.org/${logo.slug}/0a0a0a`}
+                  src={`https://cdn.simpleicons.org/${logo.slug}`}
                   alt={logo.name}
                   className="h-5 sm:h-6 md:h-7 w-auto select-none"
                   loading="lazy"
                   draggable={false}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
                 />
                 <span className="text-base sm:text-xl md:text-2xl font-semibold text-foreground/80 tracking-tight">
                   {logo.name}
