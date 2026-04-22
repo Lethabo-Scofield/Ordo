@@ -44,7 +44,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-base text-foreground/75 max-w-md mx-auto mb-8 leading-relaxed"
           >
-            Meet Ordo - the AI-powered execution system that interprets instructions, runs workflows across your tools, and verifies the results.
+            Meet Ordo - the AI-powered execution system that interprets instructions, executes workflows across your tools, verifies every output, and keeps a full audit trail.
           </motion.p>
 
           <motion.div
@@ -104,7 +104,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-base md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-              Meet Ordo - the AI-powered execution system that interprets instructions, runs workflows across your tools, and verifies the results.
+              Meet Ordo - the AI-powered execution system that interprets instructions, executes workflows across your tools, verifies every output, and keeps a full audit trail.
             </motion.p>
 
             <motion.div
