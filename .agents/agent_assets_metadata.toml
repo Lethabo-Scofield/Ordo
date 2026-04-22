@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "qkiIBT-E5gLQ7_9VOOvJR"
+uri = "file://artifacts/duna-clone/public/images/hero.png"
+type = "image"
+title = "Sunrise valley landscape hero"
+
+[[generated]]
+id = "NR1yqcmh3k-twfihRbkVH"
+uri = "file://artifacts/duna-clone/public/images/ai-mockup.png"
+type = "image"
+title = "AI UI mockup tall"
+
+[[generated]]
+id = "fQ0uo3LOF-bPsf7mZjIv6"
+uri = "file://artifacts/duna-clone/public/images/testimonial-portrait.png"
+type = "image"
+title = "Pastel portrait silhouette"
+
+[[generated]]
+id = "eEuS5jS4S1JRe7YISxUYJ"
+uri = "file://artifacts/duna-clone/public/images/news-1.png"
+type = "image"
+title = "Abstract tech editorial illustration"
+
+[[generated]]
+id = "7_zqlNhAUs70vdAJFrXjc"
+uri = "file://artifacts/duna-clone/public/images/news-2.png"
+type = "image"
+title = "Abstract system editorial illustration"
+
+[[generated]]
+id = "xjNwon4RtGCMWf1C5ACXD"
+uri = "file://artifacts/duna-clone/public/images/news-3.png"
+type = "image"
+title = "Abstract conversation editorial illustration"
