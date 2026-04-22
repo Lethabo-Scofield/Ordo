@@ -116,22 +116,14 @@ export function ScheduleDemoDialog() {
         ? ((await res.json().catch(() => ({}))) as { ok?: boolean; error?: string })
         : null;
 
-      // Vite dev fallback or missing function: SPA returns HTML, not JSON.
-      if (!data) {
-        setError(
-          "The demo form isn't connected in this environment yet. Please reach out via email and we'll get back to you.",
-        );
-        setSubmitting(false);
-        return;
-      }
-      if (!res.ok || !data.ok) {
-        setError(data.error || "Something went wrong. Please try again.");
+      if (!data || !res.ok || !data.ok) {
+        setError("Waitlist full, try again later.");
         setSubmitting(false);
         return;
       }
       setSuccess(true);
     } catch {
-      setError("Network error. Please check your connection and try again.");
+      setError("Waitlist full, try again later.");
     } finally {
       setSubmitting(false);
     }
