@@ -110,7 +110,7 @@ export const products: Product[] = [
       "Connect Ordo to your APIs, databases, and tools. It does the real work, end to end.",
     accent: "from-[#E8DCC8] via-[#DBC9AE] to-[#C9B591]",
     image: "/images/product-execute.png",
-    imageAlt: "Ordo connecting to SaaS apps, databases, and APIs",
+    imageAlt: "Ordo executing a multi-step workflow across tools",
     features: [
       {
         icon: Plug,
