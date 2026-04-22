@@ -19,7 +19,7 @@ run = "pnpm --filter @workspace/ordo run dev"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/ordo", "run", "build" ]
-publicDir = "artifacts/ordo/dist/public"
+publicDir = "artifacts/ordo/dist"
 serve = "static"
 
 [[services.production.rewrites]]

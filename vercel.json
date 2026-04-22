@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
+  "framework": "vite",
   "buildCommand": "corepack enable && pnpm install --no-frozen-lockfile && pnpm --filter @workspace/ordo build",
-  "outputDirectory": "artifacts/ordo/dist/public",
+  "outputDirectory": "artifacts/ordo/dist",
   "installCommand": "echo 'install handled by buildCommand'",
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
