@@ -1,6 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Loader2, X } from "lucide-react";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_NAME = 120;
+const MAX_COMPANY = 200;
+const MAX_USE_CASE = 200;
+const MAX_MESSAGE = 4000;
 
 const TEAM_SIZES = ["1-10", "11-50", "51-200", "201-1000", "1000+"];
 
@@ -34,6 +40,7 @@ export function ScheduleDemoDialog() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const firstFieldRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     const onOpen = () => {
@@ -45,6 +52,14 @@ export function ScheduleDemoDialog() {
     window.addEventListener(OPEN_DEMO_EVENT, onOpen);
     return () => window.removeEventListener(OPEN_DEMO_EVENT, onOpen);
   }, []);
+
+  // Autofocus the first field after the dialog opens
+  useEffect(() => {
+    if (open && !success) {
+      const t = window.setTimeout(() => firstFieldRef.current?.focus(), 80);
+      return () => window.clearTimeout(t);
+    }
+  }, [open, success]);
 
   useEffect(() => {
     if (!open) return;
@@ -67,8 +82,25 @@ export function ScheduleDemoDialog() {
     if (submitting) return;
     setError(null);
 
-    if (!form.name.trim() || !form.email.trim() || !form.company.trim()) {
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const company = form.company.trim();
+
+    if (!name || !email || !company) {
       setError("Please fill in your name, work email and company.");
+      return;
+    }
+    if (!EMAIL_RE.test(email)) {
+      setError("Please enter a valid work email address.");
+      return;
+    }
+    if (
+      name.length > MAX_NAME ||
+      company.length > MAX_COMPANY ||
+      form.useCase.length > MAX_USE_CASE ||
+      form.message.length > MAX_MESSAGE
+    ) {
+      setError("One of your entries is too long. Please shorten it.");
       return;
     }
 
@@ -77,15 +109,17 @@ export function ScheduleDemoDialog() {
       const res = await fetch("/api/schedule-demo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, name, email, company }),
       });
       const ct = res.headers.get("content-type") || "";
       const data = ct.includes("application/json")
         ? ((await res.json().catch(() => ({}))) as { ok?: boolean; error?: string })
-        : {};
-      if (res.status === 404) {
+        : null;
+
+      // Vite dev fallback or missing function: SPA returns HTML, not JSON.
+      if (!data) {
         setError(
-          "The demo form isn't connected in this preview yet. Please reach out via email and we'll get back to you.",
+          "The demo form isn't connected in this environment yet. Please reach out via email and we'll get back to you.",
         );
         setSubmitting(false);
         return;
@@ -97,7 +131,7 @@ export function ScheduleDemoDialog() {
       }
       setSuccess(true);
     } catch {
-      setError("Network error. Please try again.");
+      setError("Network error. Please check your connection and try again.");
     } finally {
       setSubmitting(false);
     }
@@ -192,9 +226,11 @@ export function ScheduleDemoDialog() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       <Field label="Full name" required>
                         <input
+                          ref={firstFieldRef}
                           type="text"
                           autoComplete="name"
                           required
+                          maxLength={MAX_NAME}
                           value={form.name}
                           onChange={(e) => update("name", e.target.value)}
                           className={inputCls}
@@ -220,6 +256,7 @@ export function ScheduleDemoDialog() {
                           type="text"
                           autoComplete="organization"
                           required
+                          maxLength={MAX_COMPANY}
                           value={form.company}
                           onChange={(e) => update("company", e.target.value)}
                           className={inputCls}
@@ -249,6 +286,7 @@ export function ScheduleDemoDialog() {
                     <Field label="Primary use case">
                       <input
                         type="text"
+                        maxLength={MAX_USE_CASE}
                         value={form.useCase}
                         onChange={(e) => update("useCase", e.target.value)}
                         className={inputCls}
@@ -259,6 +297,7 @@ export function ScheduleDemoDialog() {
                     <Field label="Anything we should know?">
                       <textarea
                         rows={3}
+                        maxLength={MAX_MESSAGE}
                         value={form.message}
                         onChange={(e) => update("message", e.target.value)}
                         className={`${inputCls} resize-none min-h-[88px]`}
