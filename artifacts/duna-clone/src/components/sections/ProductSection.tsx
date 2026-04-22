@@ -146,14 +146,9 @@ export function ProductSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-foreground/60" />
             Product
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05] mb-5">
-            One platform.
-            <br />
-            <span className="text-foreground/50">End-to-end execution.</span>
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05]">
+            Execute business processes, end to end.
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            From the moment intent enters Ordo to the audit log it leaves behind - every step is designed to make AI dependable at work.
-          </p>
         </div>
 
         {/* Tab bar */}
