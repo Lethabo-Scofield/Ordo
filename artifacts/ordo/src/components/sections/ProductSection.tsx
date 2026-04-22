@@ -129,9 +129,12 @@ export function ProductSection() {
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-foreground/[0.06] text-xs font-medium text-foreground/80 mb-4 sm:mb-5">
                       {product.eyebrow}
                     </span>
-                    <h3 className="text-[40px] xs:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] tracking-[-0.02em] font-semibold text-foreground">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-[-0.02em] leading-[1.15] mb-3 md:mb-4">
                       {product.heading}
                     </h3>
+                    <p className="text-[15px] sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+                      {product.subheading}
+                    </p>
                   </motion.div>
                 </AnimatePresence>
               </div>

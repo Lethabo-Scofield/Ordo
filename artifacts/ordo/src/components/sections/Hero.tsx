@@ -31,21 +31,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[40px] xs:text-5xl leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-5"
+            className="text-[40px] xs:text-5xl leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-8"
           >
-            Where AI actually
+            Execute business processes,
             <br />
-            gets work done
+            end to end.
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base text-foreground/75 max-w-md mx-auto mb-8 leading-relaxed"
-          >
-            Meet Ordo - the AI-powered execution system that interprets instructions, executes workflows across your tools, verifies every output, and keeps a full audit trail.
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,19 +84,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-10"
             >
-              Where AI actually<br />gets work done
+              Execute business processes,<br />end to end.
             </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto mb-10 leading-relaxed"
-            >
-              Meet Ordo - the AI-powered execution system that interprets instructions, executes workflows across your tools, verifies every output, and keeps a full audit trail.
-            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
