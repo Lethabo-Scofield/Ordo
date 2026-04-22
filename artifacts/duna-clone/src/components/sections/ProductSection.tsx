@@ -18,6 +18,10 @@ import {
   FileCheck2,
   CalendarClock,
   ArrowUpRight,
+  ListChecks,
+  Users,
+  MessagesSquare,
+  ClipboardList,
   type LucideIcon,
 } from "lucide-react";
 
@@ -52,6 +56,21 @@ const products: Product[] = [
       { icon: Sparkles, title: "Process understanding", description: "Ordo learns your business context — tools, data, terminology, and policies — so it interprets intent correctly the first time." },
       { icon: CalendarClock, title: "Trigger-based workflows", description: "Run workflows from prompts, schedules, webhooks, or events across the systems your team already uses." },
       { icon: Workflow, title: "Adaptive planning", description: "Plans adjust in real time based on incoming data, conditions, and intermediate outcomes — without breaking the flow." },
+    ],
+  },
+  {
+    id: "decide",
+    eyebrow: "Decide",
+    heading: "Save time with automated case management",
+    subheading: "Increase compliance quality and cut costs — by reducing manual work.",
+    accent: "from-[#F5E6D3] via-[#EBD5BE] to-[#D9BE9E]",
+    image: "/images/product-decide.png",
+    imageAlt: "Reviews inbox with prioritized open reviews and follow-ups",
+    features: [
+      { icon: ListChecks, title: "Automated tasks", description: "Translate compliance policies into distinct tasks, automate with AI technologies, and auto-approve cases." },
+      { icon: Users, title: "Increased analyst efficiency", description: "Assign, escalate, and resolve cases — with built-in prioritization, collaboration, 4-eye reviews, and risk scoring." },
+      { icon: MessagesSquare, title: "In-platform messaging", description: "Stop email ping-pong with customers. Keep every interaction secure, centralized, and fully auditable." },
+      { icon: ClipboardList, title: "Auditability", description: "Log every interaction, decision, and policy change as a traceable event — enabling comprehensive audit trails." },
     ],
   },
   {
