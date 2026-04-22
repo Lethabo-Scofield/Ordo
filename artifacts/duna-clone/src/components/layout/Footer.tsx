@@ -15,11 +15,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-24">
           <div className="md:col-span-4 lg:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-foreground">
-                  <path d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z" fill="currentColor"/>
-                </svg>
-                <span className="font-bold text-3xl tracking-tight">ORDO</span>
+              <div className="flex items-center mb-6">
+                <img
+                  src="/images/logo.png"
+                  alt="Ordo"
+                  className="h-12 w-auto select-none"
+                  draggable={false}
+                />
               </div>
             </div>
             <div className="mt-12 md:mt-0 text-sm text-muted-foreground">
