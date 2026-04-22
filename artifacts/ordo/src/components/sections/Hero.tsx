@@ -31,11 +31,15 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[40px] xs:text-5xl leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-8"
+            className="text-[40px] xs:text-5xl leading-[1.1] tracking-[-0.02em] font-semibold text-foreground mb-8"
           >
-            Execute business processes,
-            <br />
-            end to end.
+            Execute business processes,{" "}
+            <span
+              style={{ fontFamily: "'Caveat', cursive" }}
+              className="text-[#E76F2C] font-bold tracking-normal inline-block -rotate-2 text-[1.15em] leading-none align-baseline"
+            >
+              end to end.
+            </span>
           </motion.h1>
 
           <motion.div
@@ -84,9 +88,15 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-10"
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.1] tracking-[-0.02em] font-semibold text-foreground mb-10"
             >
-              Execute business processes,<br />end to end.
+              Execute business processes,{" "}
+              <span
+                style={{ fontFamily: "'Caveat', cursive" }}
+                className="text-[#E76F2C] font-bold tracking-normal inline-block -rotate-2 text-[1.15em] leading-none align-baseline"
+              >
+                end to end.
+              </span>
             </motion.h1>
 
             <motion.div
