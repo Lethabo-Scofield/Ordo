@@ -1,8 +1,15 @@
 import express, { type Express } from "express";
 import cors from "cors";
-import { pinoHttp } from "pino-http";
+import * as PinoHttpModule from "pino-http";
 import router from "./routes";
 import { logger } from "./lib/logger";
+
+type PinoHttpFn = (opts: unknown) => (req: unknown, res: unknown, next?: () => void) => void;
+
+const pinoHttp: PinoHttpFn =
+  (PinoHttpModule as unknown as { pinoHttp?: PinoHttpFn }).pinoHttp ??
+  (PinoHttpModule as unknown as { default?: PinoHttpFn }).default ??
+  (PinoHttpModule as unknown as PinoHttpFn);
 
 const app: Express = express();
 
