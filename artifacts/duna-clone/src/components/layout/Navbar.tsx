@@ -38,12 +38,12 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center group">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
+          <Link href="/" className="flex items-center group shrink-0">
             <img
               src="/images/logo.png"
               alt="Ordo"
-              className="h-9 md:h-10 w-auto select-none"
+              className="h-8 sm:h-9 md:h-10 w-auto select-none"
               draggable={false}
             />
           </Link>
@@ -52,15 +52,19 @@ export function Navbar() {
             <button
               onClick={handleSchedule}
               disabled={loading}
-              className="bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:bg-foreground/90 transition-colors disabled:opacity-90 inline-flex items-center gap-2 min-w-[160px] justify-center"
+              aria-label="Schedule a demo"
+              className="bg-foreground text-background px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[13px] sm:text-sm font-medium hover:bg-foreground/90 transition-colors disabled:opacity-90 inline-flex items-center gap-2 sm:min-w-[160px] justify-center whitespace-nowrap"
             >
               {loading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Opening</span>
+                  <span className="hidden sm:inline">Opening</span>
                 </>
               ) : (
-                "Schedule a demo"
+                <>
+                  <span className="sm:hidden">Book demo</span>
+                  <span className="hidden sm:inline">Schedule a demo</span>
+                </>
               )}
             </button>
           </div>

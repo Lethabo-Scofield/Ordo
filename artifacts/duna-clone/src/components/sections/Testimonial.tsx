@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Testimonial() {
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 sm:py-24 md:py-32 px-5 sm:px-6">
       <div className="max-w-[1280px] mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export function Testimonial() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center border border-white/40 shadow-[0_30px_80px_-30px_rgba(220,90,120,0.35)]"
+          className="relative overflow-hidden rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 md:p-16 flex flex-col md:flex-row gap-8 md:gap-12 items-center border border-white/40 shadow-[0_30px_80px_-30px_rgba(220,90,120,0.35)]"
         >
           {/* Painterly background */}
           <div
@@ -39,7 +39,7 @@ export function Testimonial() {
           />
 
           <div className="relative flex-1">
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] tracking-tight mb-12 text-foreground drop-shadow-[0_1px_0_rgba(255,255,255,0.6)]">
+            <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] tracking-tight mb-8 md:mb-12 text-foreground drop-shadow-[0_1px_0_rgba(255,255,255,0.6)]">
               "Ordo turned our backlog of manual operations into a system that runs itself. It's the first AI tool we've actually trusted to do the work - not just describe it."
             </blockquote>
             <div className="flex items-center gap-4">

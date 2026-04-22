@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Security() {
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 sm:py-24 md:py-32 px-5 sm:px-6">
       <div className="max-w-[1280px] mx-auto text-center flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

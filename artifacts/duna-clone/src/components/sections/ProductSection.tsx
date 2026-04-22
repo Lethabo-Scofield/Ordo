@@ -140,7 +140,7 @@ export function ProductSection() {
   const product = products[activeIndex];
 
   return (
-    <section className="relative px-6">
+    <section className="relative px-4 sm:px-6">
       {/* Decorative background blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-radial from-[#FCE8D5]/40 via-transparent to-transparent blur-3xl" />
@@ -148,20 +148,20 @@ export function ProductSection() {
 
       <div className="relative max-w-[1280px] mx-auto">
         {/* Section header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/[0.05] border border-border/40 text-xs font-medium text-foreground/70 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-foreground/60" />
             Product
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05]">
+          <h2 className="text-[32px] sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05]">
             Execute business processes, end to end.
           </h2>
         </div>
 
         {/* Tab bar */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-10 md:mb-12 -mx-2 px-2">
           <div
-            className="inline-flex flex-wrap items-center gap-1 p-1.5 rounded-full bg-white/70 backdrop-blur border border-border/50 shadow-sm"
+            className="inline-flex flex-wrap justify-center items-center gap-1 p-1 sm:p-1.5 rounded-full bg-white/70 backdrop-blur border border-border/50 shadow-sm max-w-full"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -171,7 +171,7 @@ export function ProductSection() {
                 <button
                   key={p.id}
                   onClick={() => setActiveIndex(idx)}
-                  className={`relative px-5 md:px-6 py-2.5 text-sm font-medium rounded-full transition-colors ${
+                  className={`relative px-3.5 sm:px-5 md:px-6 py-2 sm:py-2.5 text-[13px] sm:text-sm font-medium rounded-full transition-colors ${
                     isActive ? "text-background" : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
@@ -216,9 +216,9 @@ export function ProductSection() {
             />
           </AnimatePresence>
 
-          <div className="relative p-8 md:p-12 lg:p-16">
+          <div className="relative p-6 sm:p-8 md:p-12 lg:p-16">
             {/* Header row inside card */}
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12 min-h-[160px]">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-8 mb-10 md:mb-12 md:min-h-[160px]">
               <div className="flex-1 max-w-2xl">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -231,10 +231,10 @@ export function ProductSection() {
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-foreground/[0.06] text-xs font-medium text-foreground/80 mb-5">
                       {product.eyebrow}
                     </span>
-                    <h3 className="text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-[-0.02em] leading-[1.1] mb-4">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-[-0.02em] leading-[1.15] mb-3 md:mb-4">
                       {product.heading}
                     </h3>
-                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-[15px] sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                       {product.subheading}
                     </p>
                   </motion.div>
@@ -251,7 +251,7 @@ export function ProductSection() {
             </div>
 
             {/* Visual + features */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-6 sm:gap-8 lg:gap-14 items-start">
               {/* Image panel */}
               <div className="order-2 lg:order-1">
                 <AnimatePresence mode="wait">
@@ -261,7 +261,7 @@ export function ProductSection() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.98, y: -8 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative w-full aspect-square rounded-[24px] overflow-hidden bg-[#EFEDE6] flex items-center justify-center shadow-inner"
+                    className="relative w-full aspect-[4/3] sm:aspect-square rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#EFEDE6] flex items-center justify-center shadow-inner"
                   >
                     {product.image ? (
                       <div
@@ -307,17 +307,17 @@ export function ProductSection() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.35, delay: idx * 0.06 }}
-                          className="group rounded-2xl px-5 py-4 hover:bg-foreground/[0.03] transition-colors"
+                          className="group rounded-2xl px-3 sm:px-5 py-3 sm:py-4 hover:bg-foreground/[0.03] transition-colors"
                         >
-                          <div className="flex items-start gap-4">
+                          <div className="flex items-start gap-3 sm:gap-4">
                             <span className="mt-0.5 w-9 h-9 rounded-xl bg-foreground/[0.06] flex items-center justify-center shrink-0 group-hover:bg-foreground/10 transition-colors">
                               <Icon className="w-[18px] h-[18px] text-foreground/80" strokeWidth={1.75} />
                             </span>
-                            <div className="flex-1 pt-1">
-                              <div className="text-base md:text-[17px] font-medium text-foreground mb-1.5">
+                            <div className="flex-1 pt-1 min-w-0">
+                              <div className="text-[15px] sm:text-base md:text-[17px] font-medium text-foreground mb-1.5">
                                 {feature.title}
                               </div>
-                              <p className="text-muted-foreground leading-relaxed text-[14.5px]">
+                              <p className="text-muted-foreground leading-relaxed text-[14px] sm:text-[14.5px]">
                                 {feature.description}
                               </p>
                             </div>

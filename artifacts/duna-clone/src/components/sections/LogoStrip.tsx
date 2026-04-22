@@ -24,8 +24,8 @@ export function LogoStrip() {
   const repeated = [...logos, ...logos, ...logos];
 
   return (
-    <section className="py-20 border-b border-border/50 bg-background overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-6 mb-12">
+    <section className="py-14 sm:py-16 md:py-20 border-b border-border/50 bg-background overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 mb-8 md:mb-12">
         <p className="text-center text-xs font-semibold tracking-widest uppercase text-muted-foreground">
           Built for teams where execution matters
         </p>
@@ -33,29 +33,29 @@ export function LogoStrip() {
 
       <div className="relative">
         {/* Edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10" />
 
         <div className="flex whitespace-nowrap">
           <motion.div
-            className="flex gap-16 md:gap-20 items-center px-8 shrink-0"
+            className="flex gap-10 sm:gap-16 md:gap-20 items-center px-6 sm:px-8 shrink-0"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ ease: "linear", duration: 40, repeat: Infinity }}
           >
             {repeated.map((logo, i) => (
               <div
                 key={`${logo.slug}-${i}`}
-                className="flex items-center gap-3 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="flex items-center gap-2 sm:gap-3 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                 title={logo.name}
               >
                 <img
                   src={`https://cdn.simpleicons.org/${logo.slug}/0a0a0a`}
                   alt={logo.name}
-                  className="h-6 md:h-7 w-auto select-none"
+                  className="h-5 sm:h-6 md:h-7 w-auto select-none"
                   loading="lazy"
                   draggable={false}
                 />
-                <span className="text-xl md:text-2xl font-semibold text-foreground/80 tracking-tight">
+                <span className="text-base sm:text-xl md:text-2xl font-semibold text-foreground/80 tracking-tight">
                   {logo.name}
                 </span>
               </div>

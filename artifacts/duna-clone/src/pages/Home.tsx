@@ -20,7 +20,7 @@ export default function Home() {
         <Testimonial />
         <AISection />
 
-        <div className="py-32">
+        <div className="py-20 sm:py-24 md:py-32">
           <ProductSection />
         </div>
 

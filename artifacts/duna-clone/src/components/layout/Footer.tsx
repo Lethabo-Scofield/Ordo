@@ -2,7 +2,7 @@ import { Link } from "wouter";
 
 export function Footer() {
   return (
-    <footer className="relative pt-32 pb-12 px-6 overflow-hidden">
+    <footer className="relative pt-20 sm:pt-24 md:pt-32 pb-10 md:pb-12 px-5 sm:px-6 overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -12,7 +12,7 @@ export function Footer() {
       {/* Soft overlay for legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/40 to-background/10" aria-hidden="true" />
       <div className="relative max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 lg:gap-8 mb-16 md:mb-24">
           <div className="md:col-span-4 lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="flex items-center mb-6">
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <div className="flex items-center gap-4">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -69,7 +69,7 @@ export function Footer() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
             </a>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <span className="text-sm text-muted-foreground">
               Developed by{" "}
               <a
@@ -81,7 +81,7 @@ export function Footer() {
                 Olyxee
               </a>
             </span>
-            <a href="mailto:hello@ordo.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@ordo.com</a>
+            <a href="mailto:hello@ordo.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors break-all">hello@ordo.com</a>
           </div>
         </div>
       </div>

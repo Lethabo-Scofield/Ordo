@@ -23,9 +23,9 @@ export function News() {
   ];
 
   return (
-    <section className="py-32 px-6 border-t border-border/50">
+    <section className="py-20 sm:py-24 md:py-32 px-5 sm:px-6 border-t border-border/50">
       <div className="max-w-[1280px] mx-auto">
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-10 md:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
