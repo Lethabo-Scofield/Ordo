@@ -7,7 +7,7 @@ export function News() {
       source: "Deloitte Insights",
       category: "Tech Trends 2026",
       time: "12 min read",
-      image: "/images/news-1.png",
+      image: "https://media.deloitte.com/is/image/deloitte/US188548_Social:1200-x-627",
       href: "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html",
     },
     {
@@ -15,7 +15,7 @@ export function News() {
       source: "Ian Loe, Medium",
       category: "Governance",
       time: "9 min read",
-      image: "/images/news-2.png",
+      image: "https://miro.medium.com/v2/resize:fit:1024/1*tLt2K86NN4jdPPEVqW0tKQ.png",
       href: "https://medium.com/@ianloe/your-ai-agent-needs-an-audit-trail-not-just-a-guardrail-6a41de67ae75",
     },
     {
@@ -23,7 +23,7 @@ export function News() {
       source: "Kai Waehner",
       category: "Industry",
       time: "15 min read",
-      image: "/images/news-3.png",
+      image: "https://www.kai-waehner.de/wp-content/uploads/2026/04/Enterprise-Agentic-AI-Landscape-2026-AI-Model-Trust-and-Safety-vs-Vendor-Lock-in.png",
       href: "https://www.kai-waehner.de/blog/2026/04/06/enterprise-agentic-ai-landscape-2026-trust-flexibility-and-vendor-lock-in/",
     },
   ];
