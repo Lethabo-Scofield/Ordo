@@ -69,7 +69,20 @@ export function Footer() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
             </a>
           </div>
-          <a href="mailto:hello@ordo.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@ordo.com</a>
+          <div className="flex items-center gap-6">
+            <span className="text-sm text-muted-foreground">
+              Developed by{" "}
+              <a
+                href="https://olyxee.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-foreground/70 transition-colors underline-offset-4 hover:underline"
+              >
+                Olyxee
+              </a>
+            </span>
+            <a href="mailto:hello@ordo.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@ordo.com</a>
+          </div>
         </div>
       </div>
     </footer>
