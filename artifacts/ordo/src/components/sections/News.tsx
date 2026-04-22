@@ -3,23 +3,29 @@ import { motion } from "framer-motion";
 export function News() {
   const articles = [
     {
-      title: "Why execution is the missing layer in business AI",
-      category: "Perspective",
-      time: "8 min read",
-      image: "/images/news-1.png"
+      title: "Agentic AI strategy: from pilots to production fabric",
+      source: "Deloitte Insights",
+      category: "Tech Trends 2026",
+      time: "12 min read",
+      image: "/images/news-1.png",
+      href: "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html",
     },
     {
-      title: "Inside Ordo: building an AI system that actually completes work",
-      category: "Product",
-      time: "10 min read",
-      image: "/images/news-2.png"
+      title: "Your AI agent needs an audit trail, not just a guardrail",
+      source: "Ian Loe, Medium",
+      category: "Governance",
+      time: "9 min read",
+      image: "/images/news-2.png",
+      href: "https://medium.com/@ianloe/your-ai-agent-needs-an-audit-trail-not-just-a-guardrail-6a41de67ae75",
     },
     {
-      title: "Ordo Conversations: operators on building reliable AI workflows",
-      category: "Conversations",
-      time: "22 min watch",
-      image: "/images/news-3.png"
-    }
+      title: "Enterprise agentic AI in 2026: trust, flexibility, and vendor lock-in",
+      source: "Kai Waehner",
+      category: "Industry",
+      time: "15 min read",
+      image: "/images/news-3.png",
+      href: "https://www.kai-waehner.de/blog/2026/04/06/enterprise-agentic-ai-landscape-2026-trust-flexibility-and-vendor-lock-in/",
+    },
   ];
 
   return (
@@ -52,7 +58,9 @@ export function News() {
           {articles.map((article, index) => (
             <motion.a
               key={index}
-              href="#"
+              href={article.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -72,9 +80,10 @@ export function News() {
                   <span className="w-1 h-1 rounded-full bg-border" />
                   <span>{article.time}</span>
                 </div>
-                <h3 className="text-xl font-semibold leading-snug group-hover:text-muted-foreground transition-colors">
+                <h3 className="text-xl font-semibold leading-snug group-hover:text-muted-foreground transition-colors mb-2">
                   {article.title}
                 </h3>
+                <p className="text-sm text-muted-foreground">{article.source}</p>
               </div>
             </motion.a>
           ))}
