@@ -24,23 +24,35 @@ export function Testimonial() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-[#FAF5F0] to-[#FCE8D5]/50 rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center border border-[#F5EBE1]"
+          className="relative overflow-hidden rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center border border-white/40 shadow-[0_30px_80px_-30px_rgba(220,90,120,0.35)]"
         >
-          <div className="flex-1">
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] tracking-tight mb-12 text-foreground/90">
+          {/* Painterly background */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/testimonial-bg.png')" }}
+            aria-hidden
+          />
+          {/* Soft readability overlay */}
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-white/55 via-white/25 to-transparent"
+            aria-hidden
+          />
+
+          <div className="relative flex-1">
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] tracking-tight mb-12 text-foreground drop-shadow-[0_1px_0_rgba(255,255,255,0.6)]">
               "Ordo turned our backlog of manual operations into a system that runs itself. It's the first AI tool we've actually trusted to do the work - not just describe it."
             </blockquote>
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/50 shadow-sm">
-                <img 
-                  src="/images/testimonial-portrait.png" 
-                  alt="Mira Chen" 
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/80 shadow-md">
+                <img
+                  src="/images/testimonial-portrait.png"
+                  alt="Mira Chen"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
                 <div className="font-semibold text-lg text-foreground">Mira Chen</div>
-                <div className="text-muted-foreground">Head of Operations, Northwind</div>
+                <div className="text-foreground/75">Head of Operations, Northwind</div>
               </div>
             </div>
           </div>
