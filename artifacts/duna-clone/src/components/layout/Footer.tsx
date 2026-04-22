@@ -11,21 +11,21 @@ export function Footer() {
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-foreground">
                   <path d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z" fill="currentColor"/>
                 </svg>
-                <span className="font-bold text-3xl tracking-tight">DUNA</span>
+                <span className="font-bold text-3xl tracking-tight">ORDO</span>
               </div>
             </div>
             <div className="mt-12 md:mt-0 text-sm text-muted-foreground">
-              © 2026 Duna
+              © 2026 Ordo
             </div>
           </div>
           
           <div className="md:col-span-8 lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-8">
             <div className="flex flex-col gap-4">
               <h4 className="font-semibold text-sm">Product</h4>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Onboard</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Decide</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Lifecycle</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Data Platform</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Interpret</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Execute</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Verify</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Audit</a>
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AI</a>
             </div>
             <div className="flex flex-col gap-4">
@@ -53,13 +53,13 @@ export function Footer() {
         <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </a>
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
             </a>
           </div>
-          <a href="mailto:hello@duna.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@duna.com</a>
+          <a href="mailto:hello@ordo.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">hello@ordo.com</a>
         </div>
       </div>
     </footer>

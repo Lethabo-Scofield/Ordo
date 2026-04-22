@@ -12,10 +12,10 @@ export function Testimonial() {
           className="mb-16 max-w-2xl"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] mb-6">
-            Trusted by leaders
+            Trusted by operators
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Run your business onboarding like the world's best companies — without needing a 100+ people team.
+            Run your business operations like the world's best teams — without scaling headcount linearly with the work.
           </p>
         </motion.div>
 
@@ -28,19 +28,19 @@ export function Testimonial() {
         >
           <div className="flex-1">
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.3] tracking-tight mb-12 text-foreground/90">
-              "Compliance is mission-critical, but not our core business. Duna's low-code platform enables great onboarding experiences across all the countries we operate in."
+              "Ordo turned our backlog of manual operations into a system that runs itself. It's the first AI tool we've actually trusted to do the work — not just describe it."
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/50 shadow-sm">
                 <img 
                   src="/images/testimonial-portrait.png" 
-                  alt="Ante Spittler" 
+                  alt="Mira Chen" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <div className="font-semibold text-lg text-foreground">Ante Spittler</div>
-                <div className="text-muted-foreground">CEO Moss</div>
+                <div className="font-semibold text-lg text-foreground">Mira Chen</div>
+                <div className="text-muted-foreground">Head of Operations, Northwind</div>
               </div>
             </div>
           </div>

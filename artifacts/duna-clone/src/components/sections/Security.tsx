@@ -34,7 +34,7 @@ export function Security() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-10"
         >
-          Your trust is our foundation. Duna is designed with a deep commitment to data privacy and security. Visit our trust page and security center to learn more.
+          Your trust is our foundation. Ordo is designed with a deep commitment to data privacy, access control, and operational security. Visit our trust page and security center to learn more.
         </motion.p>
         
         <motion.div

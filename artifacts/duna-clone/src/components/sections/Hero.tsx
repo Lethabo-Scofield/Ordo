@@ -20,7 +20,7 @@ export function Hero() {
           className="mb-8"
         >
           <a href="#" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-foreground/10 hover:bg-foreground/15 backdrop-blur-sm transition-colors border border-foreground/5 text-sm font-medium">
-            <span>Duna raises $35mn Series A</span>
+            <span>Introducing Ordo — AI execution for business</span>
             <span className="text-muted-foreground ml-1">›</span>
           </a>
         </motion.div>
@@ -31,7 +31,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-5xl md:text-7xl lg:text-[88px] leading-[1.05] tracking-[-0.02em] font-semibold text-foreground mb-6"
         >
-          The new standard<br />in compliance
+          Where AI actually<br />gets work done
         </motion.h1>
         
         <motion.p 
@@ -40,7 +40,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Meet the AI-native platform that accelerates business onboarding, automates manual work, and grows revenue.
+          Meet Ordo — the AI-powered execution system that interprets instructions, runs workflows across your tools, and verifies the results.
         </motion.p>
         
         <motion.div

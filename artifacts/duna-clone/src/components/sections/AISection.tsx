@@ -13,16 +13,16 @@ export function AISection() {
             className="flex-1 max-w-xl"
           >
             <div className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-6">
-              Artificial Intelligence
+              Execution Engine
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.02em] mb-8">
-              AI built for compliance.
+              AI built to do the work.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-              Duna's AI agents multiply your output, not your headcount. Accelerate document verification, periodic reviews, automated acceptance, and more.
+              Ordo's agents go beyond reasoning. They take instructions, execute across your tools, verify the output, and keep a full audit trail of everything they touch.
             </p>
             <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors text-sm font-medium">
-              <span>Discover Duna AI</span>
+              <span>Discover Ordo AI</span>
               <span className="text-muted-foreground">›</span>
             </a>
           </motion.div>
@@ -37,7 +37,7 @@ export function AISection() {
             <div className="relative w-full max-w-[400px] aspect-[9/16] rounded-[32px] overflow-hidden shadow-2xl border border-border/50">
               <img 
                 src="/images/ai-mockup.png" 
-                alt="Duna AI Interface" 
+                alt="Ordo AI Interface" 
                 className="w-full h-full object-cover object-top"
               />
             </div>

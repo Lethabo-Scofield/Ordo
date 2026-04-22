@@ -19,54 +19,54 @@ export default function Home() {
         <Stats />
         <Testimonial />
         <AISection />
-        
+
         {/* Product Sections */}
         <div className="flex flex-col gap-32 py-32">
-          <ProductSection 
-            eyebrow="Onboard"
-            heading="Drive revenues with Duna Onboard"
-            subheading="High-converting onboarding journeys, no code required."
+          <ProductSection
+            eyebrow="Interpret"
+            heading="Turn instructions into structured workflows"
+            subheading="Ordo understands your business processes and translates plain-language intent into reliable execution plans."
             features={[
-              { title: "20+ KYB modules", description: "Configure every data field to fit your enterprise needs – from ID&V to AML, KYC, and more." },
-              { title: "Optimised for conversion", description: "Benefit from data pre-fills, dynamic user interfaces, smart reminders, and intelligent optimisations." },
-              { title: "First-time-right data collection", description: "Adapt data collection in real-time based on risk scoring, compliance policies and business attributes." },
-              { title: "Deep localization", description: "210+ local registries, 7+ languages, UBO registers, local VAT, and more – ready out of the box." }
+              { title: "Natural language input", description: "Describe a task or workflow in plain language. Ordo turns it into a structured, repeatable execution plan." },
+              { title: "Process understanding", description: "Ordo learns your business context — tools, data, terminology, and policies — so it interprets intent correctly the first time." },
+              { title: "Trigger-based workflows", description: "Run workflows from prompts, schedules, webhooks, or events across the systems your team already uses." },
+              { title: "Adaptive planning", description: "Plans adjust in real time based on incoming data, conditions, and intermediate outcomes — without breaking the flow." }
             ]}
           />
-          
-          <ProductSection 
-            eyebrow="Decide"
-            heading="Save time with automated case management"
-            subheading="Increase compliance quality and cut costs — by reducing manual work."
+
+          <ProductSection
+            eyebrow="Execute"
+            heading="Take action across your stack"
+            subheading="Connect Ordo to your APIs, databases, and tools — and let it complete real work end-to-end."
             features={[
-              { title: "Automated tasks", description: "Translate compliance policies into distinct tasks, automate with AI technologies, and auto/approve cases." },
-              { title: "Increased analyst efficiency", description: "Assign, escalate, and resolve cases – with built-in prioritization, collaboration, 4-eye reviews, and risk scoring." },
-              { title: "In-platform messaging", description: "Stop email ping-pong with customers. Keep every interaction secure, centralized, and fully auditable." },
-              { title: "Auditability", description: "Log every interaction, decision, and policy change as a traceable event – enabling comprehensive audit trails." }
+              { title: "Universal connectors", description: "Out-of-the-box integrations with the tools your team already uses — CRMs, databases, SaaS apps, and internal services." },
+              { title: "API-native", description: "Call any API or internal service. If it has an endpoint, Ordo can run it — securely and on demand." },
+              { title: "Database operations", description: "Read, write, and reconcile data across systems with structured, type-safe operations and predictable results." },
+              { title: "Human-in-the-loop", description: "Pause for approval, escalate edge cases, and keep humans in control where it matters most." }
             ]}
           />
-          
-          <ProductSection 
-            eyebrow="Lifecycle"
-            heading="Ensure compliance at every stage"
-            subheading="Monitor customers throughout the lifecycle and avoid backlogs due to periodic reviews."
+
+          <ProductSection
+            eyebrow="Verify"
+            heading="Outputs you can actually trust"
+            subheading="Every action Ordo takes is checked against expected outcomes — not just generated and shipped."
             features={[
-              { title: "Daily monitoring", description: "Guarantee ongoing compliance with daily screening (PEP, sanctions, media) and discrepancy monitoring." },
-              { title: "Periodic reviews", description: "Automate the full re-KYC lifecycle with Duna's integrated platform: from policy to data collection and review." },
-              { title: "Policy management", description: "Roll out policy updates and collect only what's needed – across products, partners, and countries." },
-              { title: "Legal agreements", description: "Manage contract and ToS acceptance in one flow – with legal representatives verified prior to signature." }
+              { title: "Output validation", description: "Verify results against schemas, business rules, and source-of-truth data before they're committed downstream." },
+              { title: "Self-correction", description: "Detect failures and retry, reroute, or escalate — without breaking the workflow or losing context." },
+              { title: "Confidence scoring", description: "Every step ships with a confidence signal so teams know exactly when to step in and when to let it run." },
+              { title: "Quality benchmarks", description: "Track accuracy, completeness, and reliability over time — per workflow, per task, per agent." }
             ]}
           />
-          
-          <ProductSection 
-            eyebrow="Data platform"
-            heading="Unlock data orchestration with intelligence"
-            subheading="Power compliance decisions, cut integration costs, and improve conversion."
+
+          <ProductSection
+            eyebrow="Audit"
+            heading="Full traceability for every run"
+            subheading="Logs, lineage, and accountability for every action Ordo takes — built for regulated environments."
             features={[
-              { title: "Extensive partner network", description: "Leverage one integration to leading KYC technologies, and global and local data providers." },
-              { title: "Smart routing", description: "Automatically route to the optimal data providers, based on performance, costs and coverage." },
-              { title: "Low data quality resolved", description: "Bridge challenges with fragmented data. Prefill what's available, and automatically collect what's missing." },
-              { title: "Built-in redundancy", description: "Avoid losing customers – with fallback procedures across multiple third-party integrations." }
+              { title: "Detailed run logs", description: "Capture inputs, decisions, tool calls, and outputs as a structured event timeline you can search and replay." },
+              { title: "Replayable workflows", description: "Re-run any execution from any point — with the same inputs, conditions, and surrounding context." },
+              { title: "Permissions & controls", description: "Scope what each agent can read, write, or execute — by tool, dataset, or environment." },
+              { title: "Compliance-ready", description: "Built-in audit trails, retention controls, and exports designed for security and compliance reviews." }
             ]}
           />
         </div>

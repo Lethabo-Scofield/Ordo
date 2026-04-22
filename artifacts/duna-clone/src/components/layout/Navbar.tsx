@@ -14,9 +14,9 @@ export function Navbar() {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-foreground transition-transform group-hover:rotate-90 duration-500">
             <path d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z" fill="currentColor"/>
           </svg>
-          <span className="font-bold text-xl tracking-tight">DUNA</span>
+          <span className="font-bold text-xl tracking-tight">ORDO</span>
         </Link>
-        
+
         <nav className="hidden md:flex items-center gap-8">
           <a href="#" className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">Product</a>
           <a href="#" className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">Customers</a>
