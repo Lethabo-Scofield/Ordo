@@ -47,7 +47,16 @@ export function ProductSection() {
             Product
           </span>
           <h2 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.025em] leading-[1.05]">
-            Execute business processes, end to end.
+            Execute business processes,{" "}
+            <span
+              className="inline-block text-[#E76F2C] font-normal tracking-normal"
+              style={{
+                fontFamily: "'Caveat', cursive",
+                transform: "rotate(-2deg)",
+              }}
+            >
+              end to end.
+            </span>
           </h2>
         </div>
 
