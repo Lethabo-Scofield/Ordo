@@ -10,14 +10,16 @@ interface ProductSectionProps {
   heading: string;
   subheading: string;
   features: Feature[];
+  image?: string;
+  imageAlt?: string;
 }
 
-export function ProductSection({ eyebrow, heading, subheading, features }: ProductSectionProps) {
+export function ProductSection({ eyebrow, heading, subheading, features, image, imageAlt }: ProductSectionProps) {
   return (
     <section className="px-6">
       <div className="max-w-[1280px] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-16">
-          <motion.div 
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-16 items-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -38,11 +40,28 @@ export function ProductSection({ eyebrow, heading, subheading, features }: Produ
               <span className="text-muted-foreground">›</span>
             </a>
           </motion.div>
+
+          {image && (
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="flex-1 w-full flex justify-center lg:justify-end"
+            >
+              <div
+                className="relative w-full max-w-[520px] aspect-square rounded-[32px] overflow-hidden shadow-xl border border-border/50 bg-[#EFEDE6] bg-no-repeat bg-center bg-contain"
+                style={{ backgroundImage: `url('${image}')` }}
+                role="img"
+                aria-label={imageAlt ?? heading}
+              />
+            </motion.div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {features.map((feature, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

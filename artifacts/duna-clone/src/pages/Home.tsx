@@ -26,6 +26,8 @@ export default function Home() {
             eyebrow="Interpret"
             heading="Turn instructions into structured workflows"
             subheading="Ordo understands your business processes and translates plain-language intent into reliable execution plans."
+            image="/images/product-interpret.png"
+            imageAlt="Ordo interpreting a business search into autofilled workflow steps"
             features={[
               { title: "Natural language input", description: "Describe a task or workflow in plain language. Ordo turns it into a structured, repeatable execution plan." },
               { title: "Process understanding", description: "Ordo learns your business context — tools, data, terminology, and policies — so it interprets intent correctly the first time." },
@@ -50,6 +52,8 @@ export default function Home() {
             eyebrow="Verify"
             heading="Outputs you can actually trust"
             subheading="Every action Ordo takes is checked against expected outcomes — not just generated and shipped."
+            image="/images/product-verify.png"
+            imageAlt="Ordo settings being verified against required information with checkmarks"
             features={[
               { title: "Output validation", description: "Verify results against schemas, business rules, and source-of-truth data before they're committed downstream." },
               { title: "Self-correction", description: "Detect failures and retry, reroute, or escalate — without breaking the workflow or losing context." },
