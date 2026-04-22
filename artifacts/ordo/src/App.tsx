@@ -7,6 +7,10 @@ import Home from "@/pages/Home";
 import Privacy from "@/pages/legal/Privacy";
 import Terms from "@/pages/legal/Terms";
 import Cookies from "@/pages/legal/Cookies";
+import Trust from "@/pages/resources/Trust";
+import SecurityPage from "@/pages/resources/Security";
+import Documentation from "@/pages/resources/Documentation";
+import HelpCenter from "@/pages/resources/HelpCenter";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +21,10 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/cookies" component={Cookies} />
+      <Route path="/trust" component={Trust} />
+      <Route path="/security" component={SecurityPage} />
+      <Route path="/documentation" component={Documentation} />
+      <Route path="/help" component={HelpCenter} />
       <Route component={NotFound} />
     </Switch>
   );
